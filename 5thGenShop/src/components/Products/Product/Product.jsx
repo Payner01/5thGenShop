@@ -23,7 +23,7 @@ const Product = ({ product }) => {
                     {product.price}
                 </Typography>
             </div>
-            <Typography variant="h2" color="textSecondary">{product.description}</Typography>
+            <Typography variant="h8" color="textSecondary">{product.description}</Typography>
         </CardContent>
         <CardActions disabledSpacing className={classes.cardActions}>
             <IconButton aria-label="Add to Cart"></IconButton>
