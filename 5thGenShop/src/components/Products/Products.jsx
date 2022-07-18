@@ -4,14 +4,11 @@ import { Grid } from '@material-ui/core';
 import Product from './Product/Product';
 import useStyles from './styles';
 
-const products = [
-    {id: 1, name: 'Splitter', description: 'Front-Lip', price: '$1,000', image: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'},
-    
-    {id: 3, name: 'Diffuser', description: 'Rear Part', price: '$1,000', image: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'},
-]
 
-const Products = () => {
+const Products = ({ products }) => {
     const classes = useStyles();
+    console.log(products);
+
     return (
         <main className={classes.content}>
             <div className={classes.toolbar} /> 
