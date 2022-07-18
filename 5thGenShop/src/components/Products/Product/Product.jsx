@@ -6,7 +6,7 @@ import useStyles from './styles'
 
 
 
-const Product = ({ product }) => {
+const Product = ({ product, onAddToCart }) => {
 
     const classes = useStyles();
     console.log(product);
@@ -24,11 +24,13 @@ const Product = ({ product }) => {
                     {product.price.formatted_with_symbol}
                 </Typography>
             </div>
-            <Typography variant="h6" color="textSecondary">{product.description}</Typography>
+            <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary"/ >
         </CardContent>
         <CardActions disabledspacing="true" className={classes.cardActions}>
-            <IconButton aria-label="Add to Cart"></IconButton>
-            <AddShoppingCart />
+            <IconButton aria-label="Add to Cart" onClick={() => onAddToCart(product.id, 1)}>
+                <AddShoppingCart />
+            </IconButton>
+            
             </CardActions>
       </Card>
     </div>
