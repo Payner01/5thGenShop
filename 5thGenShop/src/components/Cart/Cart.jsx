@@ -1,9 +1,10 @@
 import React from 'react'
 import { Container, Typography, Button, Grid } from '@material-ui/core'
 
+import useStyles from './styles'
 const Cart = ({ cart }) => {
-    const isEmpty = !cart.line_items.lenght;
-
+    const isEmpty = !cart.line_items;
+    const classes = useStyles();
 
     const EmptyCart = () => (
         <Typography variant="subtitle1">You have no items in your cart, start adding items!</Typography>
@@ -33,7 +34,7 @@ const Cart = ({ cart }) => {
     <Container>
         <div className={classes.toolbar} />
         <Typography className={classes.title} variant="h3">Your Shopping Cart</Typography>
-        { isEmpty ? <EmptyCard /> : <FilledCart />}
+        { isEmpty ? <EmptyCart /> : <FilledCart />}
     </Container>
   )
 }
